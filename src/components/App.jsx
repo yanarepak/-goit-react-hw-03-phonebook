@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './Contact/ContactList';
 import { Filter } from './Filter/Filter';
+import { nanoid } from 'nanoid';
+
 
 const LOKAL_KEY = 'contacts'
 
@@ -30,12 +32,13 @@ export class App extends Component {
   }
 
   addContact = newContact => {
+    const contact = {id: nanoid(), number: newContact.number, name: newContact.name,}
     this.setState(({ contacts }) =>
     contacts.find(
       contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
     )
       ? alert(`${newContact.name} is already in contacts`)
-      : { contacts: [newContact, ...contacts] }
+      : { contacts: [contact, ...contacts] }
   );
   };
 
@@ -49,11 +52,12 @@ export class App extends Component {
         contacts: prev.contacts.filter(contact => contact.id !== id),
       };
     });
+    // const elemIndex = this.state.contacts.findIndex(item => item.id === id)
+    // this.setState(({contacts}) => ({contacts: [...contacts.slice(0, elemIndex), ...contacts.slice(elemIndex +1, contacts.length)]}))
   };
 
   render() {
     const { contacts, filter } = this.state;
-
     const filterContactsList = contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );

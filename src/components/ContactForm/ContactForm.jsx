@@ -1,8 +1,8 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { nanoid } from 'nanoid';
 import * as yup from 'yup';
 import PT from 'prop-types';
 import css from '../ContactForm/ContactForm.module.css';
+
 
 let schema = yup.object().shape({
   name: yup
@@ -23,7 +23,6 @@ let schema = yup.object().shape({
 
 export const ContactForm = ({addContact}) => {
   const initialValues = {
-    id: nanoid(),
     name: '',
     number: '',
   };
