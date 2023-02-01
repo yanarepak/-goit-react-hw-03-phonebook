@@ -1,0 +1,21 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #4f4c4c;
+}
+
+.input {
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.input:hover,
+.input:focus {
+  border-color: rgb(69, 114, 191);
+}

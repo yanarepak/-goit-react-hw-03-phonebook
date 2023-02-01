@@ -1,0 +1,26 @@
+.item {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #4f4c4c;
+  margin-bottom: 8px;
+
+  
+}
+
+.btn {
+  padding: 5px 16px;
+  font-weight: 300;
+  font-size: 16px;
+  border: transparent;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px #201e20;
+  margin-left: 15px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: rgb(69, 114, 191);
+  box-shadow: 4px 4px 9px #201e20;
+}
